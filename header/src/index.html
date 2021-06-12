@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Comicslate</title>
+
+        <link rel="stylesheet" href="styles.less">
+    </head>
+
+    <body>
+        <header class="header" data-rnd="6">
+            <a href="/en/start" class="header__logo" title="Main page"></a>
+            <!-- <form action="/start" method="get" role="search" class="header__search" id="dw__search"
+                accept-charset="utf-8">
+                <input type="hidden" name="do" value="search" />
+                <input type="hidden" name="id" value="en:start" />
+                <input class="header__search-input" name="q" type="text" class="edit" title="[F]"
+                    accesskey="f" placeholder="Search" autocomplete="on" id="qsearch__in"
+                    value="" />
+                <button class="header__search-button" value="1" type="submit"
+                    title="Search">🔎</button>
+            </form> -->
+            <button type="button" class="header__hamburger" aria-expanded="false"
+                aria-controls="menu" title="Menu">
+                <div></div>
+                <div></div>
+                <div></div>
+            </button>
+            <div id="menu" class="header__menu" hidden>
+                <div class="header__topbar" data-rnd="6">
+                    <nav class="header__topbar-menu">
+                        <a href="/en/menu" target="_self">All comics</a>
+                        <a href="/en/news/index" target="_self">News</a>
+                        <a href="/en/wiki/index" target="_blank">Helproom</a>
+                        <a href="//discord.gg/T8p6M4Q" target="_blank">Chat</a>
+                        <a href="//app.comicslate.org/" target="_blank">Mobile App</a>
+                    </nav>
+                </div>
+                <nav class="header__languages">
+                    <div class="plugin_translation">
+                        <ul>
+                            <li class="be">
+                                <a href="/be/start" class="wikilink1" hreflang="be"
+                                    title="Беларуская">be</a>
+                            </li>
+                            <li class="bg">
+                                <a href="/bg/start" class="wikilink1" hreflang="bg"
+                                    title="Български език">bg</a>
+                            </li>
+                            <li class="da">
+                                <a href="/da/start" class="wikilink1" hreflang="da"
+                                    title="Dansk">da</a>
+                            </li>
+                            <li class="de">
+                                <a href="/de/start" class="wikilink1" hreflang="de"
+                                    title="Deutsch">de</a>
+                            </li>
+                            <li class="el">
+                                <a href="/el/start" class="wikilink1" hreflang="el"
+                                    title="Ελληνικά">el</a>
+                            </li>
+                            <li class="en">
+                                <a href="/en/start" class="wikilink1" hreflang="en"
+                                    title="English">en</a>
+                            </li>
+                            <li class="eo">
+                                <a href="/eo/start" class="wikilink1" hreflang="eo"
+                                    title="Esperanto">eo</a>
+                            </li>
+                            <li class="es">
+                                <a href="/es/start" class="wikilink1" hreflang="es"
+                                    title="Español">es</a>
+                            </li>
+                            <li class="fi">
+                                <a href="/fi/start" class="wikilink1" hreflang="fi"
+                                    title="Suomi">fi</a>
+                            </li>
+                            <li class="fr">
+                                <a href="/fr/start" class="wikilink1" hreflang="fr"
+                                    title="Français">fr</a>
+                            </li>
+                            <li class="he">
+                                <a href="/he/start" class="wikilink1" hreflang="he"
+                                    title="עברית">he</a>
+                            </li>
+                            <li class="hi">
+                                <a href="/hi/start" class="wikilink1" hreflang="hi"
+                                    title="हिन्दी, हिंदी">hi</a>
+                            </li>
+                            <li class="hu">
+                                <noindex><a href="/hu/start?do=edit" class="wikilink2"
+                                        rel="nofollow" title="Magyar">hu</a></noindex>
+                            </li>
+                            <li class="id">
+                                <a href="/id/start" class="wikilink1" hreflang="id"
+                                    title="Bahasa Indonesia">id</a>
+                            </li>
+                            <li class="it">
+                                <a href="/it/start" class="wikilink1" hreflang="it"
+                                    title="Italiano">it</a>
+                            </li>
+                            <li class="ja">
+                                <a href="/ja/start" class="wikilink1" hreflang="ja"
+                                    title="日本語">ja</a>
+                            </li>
+                            <li class="ko">
+                                <a href="/ko/start" class="wikilink1" hreflang="ko"
+                                    title="한국어">ko</a>
+                            </li>
+                            <li class="pl">
+                                <a href="/pl/start" class="wikilink1" hreflang="pl"
+                                    title="Polski">pl</a>
+                            </li>
+                            <li class="pt">
+                                <a href="/pt/start" class="wikilink1" hreflang="pt"
+                                    title="Português">pt</a>
+                            </li>
+                            <li class="ru">
+                                <a href="/ru/start" class="wikilink1" hreflang="ru"
+                                    title="Русский">ru</a>
+                            </li>
+                            <li class="sib">
+                                <a href="/sib/start" class="wikilink1" hreflang="sib"
+                                    title="Сибирской">sib</a>
+                            </li>
+                            <li class="sjn">
+                                <noindex><a href="/sjn/start?do=edit" class="wikilink2"
+                                        rel="nofollow" title="Sindarin">sjn</a></noindex>
+                            </li>
+                            <li class="tr">
+                                <noindex><a href="/tr/start?do=edit" class="wikilink2"
+                                        rel="nofollow" title="Türkçe">tr</a></noindex>
+                            </li>
+                            <li class="uk">
+                                <a href="/uk/start" class="wikilink1" hreflang="uk"
+                                    title="Українська">uk</a>
+                            </li>
+                            <li class="zh">
+                                <a href="/zh/start" class="wikilink1" hreflang="zh"
+                                    title="中文">zh</a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </header>
+
+        <script src="./scripts.js"></script>
+    </body>
+
+</html>

@@ -1,0 +1,14 @@
+{
+  "tabWidth": 2,
+  "semi": true,
+  "trailingComma": "es5",
+  "singleQuote": true,
+  "overrides": [
+    {
+      "files": "*.less",
+      "options": {
+        "singleQuote": false
+      }
+    }
+  ]
+}
