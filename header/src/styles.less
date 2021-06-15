@@ -28,6 +28,7 @@ body {
 
 .header {
   position: relative;
+  box-sizing: border-box;
 
   // фон меню
   &::before {
@@ -115,8 +116,8 @@ body {
   border: 0;
   width: 40px;
   height: 40px;
-  padding: 12px 7px;
-  background: rgba(255, 255, 255, 0.2);
+  padding: 12px 8px;
+  background: transparent;
   border-radius: 100%;
   appearance: none;
 
@@ -125,9 +126,138 @@ body {
     height: 2px;
     background: #fff;
   }
+
+  &:hover,
+  &:focus-visible {
+    background: rgba(255, 255, 255, 0.2);
+  }
+
+  @media screen and (min-width: @from-lg) {
+    display: none;
+  }
 }
 
 .header__menu {
+}
+
+.header__search {
+  position: absolute;
+  top: 5px;
+  right: 8px;
+  z-index: 1;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  border-radius: 8px;
+
+  @media screen and (min-width: @from-lg) {
+    top: 2px;
+    background: rgba(255, 255, 255, 0.2);
+  }
+}
+
+.header__search-input {
+  position: relative;
+  align-self: stretch;
+  display: none;
+  padding: 5px 8px;
+  font-size: 14px;
+  width: 100%;
+  min-width: 0;
+  border: 0;
+  border-radius: 4px;
+  background: transparent;
+  appearance: none;
+  outline: none;
+  box-shadow: none;
+  appearance: none;
+  transition: color @tr-in, background-color @tr-in;
+
+  &::placeholder {
+    font-size: 14px;
+    opacity: 1;
+    color: rgba(255, 255, 255, 0.8);
+  }
+
+  &:focus {
+    color: #000;
+
+    &::placeholder {
+      color: rgba(0, 0, 0, 0.6);
+    }
+  }
+
+  @media screen and (min-width: @from-lg) {
+    display: block;
+  }
+}
+
+.header__search-button {
+  flex-shrink: 0;
+  box-sizing: border-box;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  border: 0;
+  //border-radius: 100%;
+  appearance: none;
+  cursor: pointer;
+
+  path {
+    fill: #fff;
+  }
+
+  @media screen and (min-width: @from-lg) {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+.header__search-reset {
+  display: none;
+}
+
+.header__search--active,
+.header__search:focus-within {
+  left: 8px;
+  background: #fff;
+  box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 3px -2px rgba(0, 0, 0, 0.14),
+    0 1px 8px 0 rgba(0, 0, 0, 0.12);
+
+  .header__search-input {
+    display: block;
+
+    &::placeholder {
+      color: rgba(0, 0, 0, 0.6);
+    }
+  }
+
+  .header__search-button {
+    path {
+      fill: #000;
+    }
+
+    &:hover,
+    &:focus-visible {
+      background: rgba(0, 0, 0, 0.15);
+    }
+  }
+
+  .header__search-reset {
+    display: block;
+  }
+
+  @media screen and (min-width: @from-lg) {
+    left: auto;
+
+    .header__search-reset {
+      display: none;
+    }
+  }
 }
 
 .header__topbar {
@@ -176,56 +306,6 @@ body {
       box-shadow: 0 0 1px 3px #fff;
     }
   }
-}
-
-.header__search {
-  display: flex;
-  margin-left: auto;
-}
-
-.header__search-input {
-  position: relative;
-  padding: 5px 8px;
-  font-size: 14px;
-  width: 100%;
-  min-width: 0;
-  border: 0;
-  border-radius: 4px;
-  background: rgba(255, 255, 255, 0.2);
-  appearance: none;
-  outline: none;
-  box-shadow: none;
-  appearance: none;
-  transition: color @tr-in, background-color @tr-in;
-
-  &::placeholder {
-    font-size: 14px;
-    opacity: 1;
-    color: rgba(255, 255, 255, 0.8);
-  }
-
-  &:focus {
-    border-color: #fff;
-    background: #fafafa;
-    color: #000;
-
-    &::placeholder {
-      color: rgba(0, 0, 0, 0.6);
-    }
-  }
-}
-
-.header__search-button {
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border: 0;
-  width: 30px;
-  height: 30px;
-  background: rgba(255, 255, 255, 0.2);
-  border-radius: 0;
-  appearance: none;
 }
 
 .header__languages {
