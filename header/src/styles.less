@@ -3,6 +3,15 @@
 
 @from-lg: 1000px;
 
+@colors: {
+  1: #829dd3;
+  2: #a387c1;
+  3: #e183bd;
+  4: #e9b630;
+  5: #45a2c4;
+  6: #ad464a;
+};
+
 @font-face {
   font-family: DatFestComic;
   font-display: swap;
@@ -16,7 +25,7 @@ body {
 }
 
 // Вырубает все плавные переходы и анимации на сайте, если у пользователя
-// в операцинной системе влючен минимизации количества анимаций или движения
+// в операцинной системе влючена минимизация количества анимаций или движения
 // https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion
 @media screen and (prefers-reduced-motion: reduce), (update: slow) {
   * {
@@ -44,11 +53,13 @@ body {
     }
   }
 
-  &[data-rnd="6"] {
-    &::before {
-      background: #ad464a;
-    }
-  }
+  each(@colors, {
+    &[data-color="@{key}" ] {
+      &::before {
+        background: @value;
+      }
+    }  
+  });
 }
 
 .header__logo {
@@ -109,14 +120,14 @@ body {
 .header__hamburger {
   position: absolute;
   top: 5px;
-  left: 0px;
+  left: 8px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   border: 0;
   width: 40px;
   height: 40px;
-  padding: 12px 8px;
+  padding: 12px 10px;
   background: transparent;
   border-radius: 100%;
   appearance: none;
@@ -203,7 +214,7 @@ body {
   height: 40px;
   background: transparent;
   border: 0;
-  //border-radius: 100%;
+  border-radius: 100%;
   appearance: none;
   cursor: pointer;
 
@@ -211,9 +222,28 @@ body {
     fill: #fff;
   }
 
+  &:hover,
+  &:focus-visible {
+    background: rgba(255, 255, 255, 0.2);
+  }
+
   @media screen and (min-width: @from-lg) {
     width: 30px;
     height: 30px;
+  }
+}
+
+.header__search-open {
+  @media screen and (min-width: @from-lg) {
+    display: none;
+  }
+}
+
+.header__search-submit {
+  display: none;
+
+  @media screen and (min-width: @from-lg) {
+    display: inline-flex;
   }
 }
 
@@ -237,14 +267,24 @@ body {
   }
 
   .header__search-button {
+    border-radius: 0;
+
+    .header[data-rnd="6"] &:hover,
+    .header[data-rnd="6"] &:focus-visible {
+      background: rgba(255, 0, 0, 0.15);
+    }
+
     path {
       fill: #000;
     }
+  }
 
-    &:hover,
-    &:focus-visible {
-      background: rgba(0, 0, 0, 0.15);
-    }
+  .header__search-open {
+    display: none;
+  }
+
+  .header__search-submit {
+    display: inline-flex;
   }
 
   .header__search-reset {
